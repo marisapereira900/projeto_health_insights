@@ -6,7 +6,7 @@ base_dir = os.path.dirname(__file__)
 silver_path = os.path.join(base_dir, "..", "silver", "sinasc", "sinasc_2022_sc_clean.parquet")
 gold_path = os.path.join(base_dir, "..", "gold", "sinasc", "fato_nascimentos.parquet")
 
-# Criar pasta gold se não existir
+# Criar pasta gold 
 os.makedirs(os.path.dirname(gold_path), exist_ok=True)
 
 print("📂 Lendo dados do Silver...")
