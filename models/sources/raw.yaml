@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Dados brutos do DataSUS"
+    tables:
+      - name: atendimento
+        description: "Tabela de atendimentos hospitalares"
+      - name: doenca
+        description: "Tabela de doenças (CID-10)"
+      - name: localidade
+        description: "Tabela de municípios e estados"
+      - name: procedimento
+        description: "Tabela de procedimentos realizados"
+      - name: faixa_etaria_sexo
+        description: "Tabela de faixa etária e sexo dos pacientes"

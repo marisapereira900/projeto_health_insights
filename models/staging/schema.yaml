@@ -1,0 +1,8 @@
+version: 2
+models:
+  - name: stg_nascidos_vivos
+    description: "Modelo de staging para os dados brutos do SINASC."
+    columns:
+      - name: nascimento_id
+        description: "Chave primária gerada para cada nascimento."
+        # ...

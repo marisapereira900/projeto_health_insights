@@ -1,0 +1,20 @@
+name: 'projeto_health_insights'
+version: '1.0.0'
+config-version: 2
+
+profile: 'projeto_health_insights'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  projeto_health_insights:
+    +materialized: view  # Todos os modelos da pasta "models/" serão criados como views

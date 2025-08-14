@@ -1,0 +1,11 @@
+
+    
+    
+
+
+
+select APGAR5
+from `workspace`.`default`.`fato_nascimento`
+where APGAR5 is null
+
+

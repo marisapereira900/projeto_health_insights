@@ -1,0 +1,12 @@
+# dbt artifacts
+target/
+dbt_packages/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Environment variables and sensitive info
+.env
+profiles.yml
+*.token

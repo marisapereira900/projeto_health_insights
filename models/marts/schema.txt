@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fato_nascimento
+    description: "Tabela fato com nascimentos em SC 2022"
+    columns:
+      - name: nascimento_id
+        description: "Identificador único do nascimento"
+        tests:
+          - unique
+          - not_null
+      - name: data_id
+        description: "ID da data formatado como YYYYMMDD"
+        tests:
+          - not_null
+      - name: municipio
+        description: "Código do município de nascimento"
+      - name: sexo
+        description: "Sexo do recém-nascido"
+      - name: peso
+        description: "Peso ao nascer (gramas)"
+      - name: idade_mae
+        description: "Idade da mãe (anos)"
+      - name: gestacao_semanas
+        description: "Duração da gestação em semanas"
+
+  - name: dim_tempo
+    description: "Dimensão de tempo baseada nas datas de nascimento"
+    columns:
+      - name: data_id
+        description: "ID da data formatado como YYYYMMDD"
+        tests:
+          - unique
+          - not_null
+      - name: data
+        description: "Data completa"
+      - name: ano
+        description: "Ano da data"
+      - name: mes
+        description: "Mês da data"
+      - name: dia
+        description: "Dia da data"
+      - name: trimestre
+        description: "Trimestre do ano"
+      - name: dia_semana
+        description: "Número do dia da semana (1=Domingo)"

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    database: workspace      # ou remova se não estiver usando Unity Catalog
+    schema: default
+    tables:
+      - name: sinasc_2022_sc_clean

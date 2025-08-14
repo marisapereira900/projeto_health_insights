@@ -1,0 +1,87 @@
+version: 2
+
+models:
+  - name: fato_nascimento
+    description: "Tabela de fatos contendo dados de nascimentos para análise."
+    columns:
+      - name: nascimento_id
+        description: "Chave primária única para cada nascimento."
+        tests:
+          - unique
+          - not_null
+      - name: data_id
+        description: "Chave estrangeira para a dimensão de tempo."
+        tests:
+          - not_null
+      - name: cod_municipio
+        description: "Chave estrangeira para a dimensão de localidade."
+        tests:
+          - not_null
+      - name: sexo
+        description: "Sexo do recém-nascido (Masculino, Feminino, Ignorado)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Masculino', 'Feminino', 'Ignorado']
+      - name: peso
+        description: "Peso do recém-nascido em gramas."
+        tests:
+          - not_null
+      - name: idade_mae
+        description: "Idade da mãe no momento do nascimento."
+        tests:
+          - not_null
+      - name: gestacao_semanas
+        description: "Tempo de gestação em semanas."
+        tests:
+          - not_null
+      - name: tipo_parto
+        description: "Tipo de parto realizado."
+        tests:
+          - not_null
+      - name: APGAR1
+        description: "Score de Apgar no 1º minuto."
+        tests:
+          - not_null
+      - name: APGAR5
+        description: "Score de Apgar no 5º minuto."
+        tests:
+          - not_null
+
+  - name: dim_tempo
+    description: "Dimensão de tempo com informações detalhadas sobre datas."
+    columns:
+      - name: data_id
+        description: "Chave primária da dimensão de tempo."
+        tests:
+          - unique
+          - not_null
+      - name: data
+        description: "Data completa do evento."
+        tests:
+          - not_null
+      - name: ano
+        description: "Ano do evento."
+        tests:
+          - not_null
+      - name: mes
+        description: "Mês do evento."
+        tests:
+          - not_null
+      - name: dia
+        description: "Dia do mês."
+        tests:
+          - not_null
+
+  - name: dim_localidade
+    description: "Dimensão de municípios para análise geográfica."
+    columns:
+      - name: cod_municipio
+        description: "Código do município (IBGE)."
+        tests:
+          - unique
+          - not_null
+      - name: municipio
+        description: "Nome do município."
+        tests:
+          - not_null
