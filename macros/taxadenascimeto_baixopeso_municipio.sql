@@ -1,8 +1,6 @@
--- Este script SQL calcula o total de nascimentos com baixo peso por município
--- e a taxa percentual de nascimentos de baixo peso.
--- Você pode salvar este código em um arquivo .sql para compartilhar no GitHub.
-
+-- Este script SQL calcula o total de nascimentos com baixo peso por município e a taxa percentual de nascimentos de baixo peso.
 -- WITH: Cria uma tabela temporária (CTE) para organizar a lógica.
+
 WITH nascimentos_municipio AS (
     SELECT
         l.municipio,
@@ -29,4 +27,5 @@ FROM
 WHERE
     total_nascimentos > 100 -- Filtra para municípios com mais de 100 nascimentos para garantir dados significativos.
 ORDER BY
+
     taxa_baixo_peso_percentual DESC;
